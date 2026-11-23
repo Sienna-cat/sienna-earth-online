@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN" data-hosting="static">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0c1c22" />
+  <title>DriveFollow · 汽车销售跟进工作台</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-lockup"><div class="brand-mark"><span></span><span></span><span></span></div><div><strong>DriveFollow</strong><small>SALES INTELLIGENCE</small></div></div>
+      <div class="workspace-switch"><span class="avatar avatar-orange">林</span><div><b>华东体验中心</b><small>销售工作台</small></div><span class="chevron">⌄</span></div>
+      <nav class="primary-nav" aria-label="主导航">
+        <button class="nav-item active" data-view="workspace"><span class="nav-icon">⌁</span>今日跟进<span class="nav-count">6</span></button>
+        <button class="nav-item" data-view="pipeline"><span class="nav-icon">◈</span>客户管线</button>
+        <button class="nav-item" data-view="knowledge"><span class="nav-icon">▤</span>产品知识库</button>
+        <button class="nav-item" data-view="quality"><span class="nav-icon">◒</span>质量与迭代</button>
+      </nav>
+      <div class="sidebar-footer"><a href="./portfolio.html" class="portfolio-link"><span>↗</span>查看作品集说明</a><div class="demo-badge"><span class="status-dot"></span><span><b>演示环境</b><small>真实车型 · 模拟客户</small></span></div><button id="resetDemo" class="text-button">重置演示数据</button></div>
+    </aside>
+    <main class="main-content" id="main">
+      <header class="topbar"><div class="mobile-brand"><button id="menuToggle" class="icon-button" aria-label="打开菜单">☰</button><b>DriveFollow</b></div><div class="topbar-context"><span class="context-dot"></span><span>华东体验中心</span><span class="divider"></span><span id="currentDate">2026 / 11 / 19 · 演示日</span><span class="demo-pill">DEMO</span></div><div class="topbar-actions"><button class="icon-button" id="helpButton" title="演示指南" aria-label="演示指南">?</button><button class="icon-button" id="exportButton" title="导出本地记录" aria-label="导出本地记录">↥</button><span class="avatar avatar-orange">林</span></div></header>
+      <div class="page-content">
+        <section id="workspaceView" class="view active-view">
+          <div class="page-heading"><div><div class="eyebrow">THURSDAY · 19 NOV 2026</div><h1>今天，先跟进这些客户 <span class="wave">✦</span></h1><p>把客户的关注点，变成下一步可执行的行动。</p></div><button class="primary-button" id="newLeadButton"><span>＋</span> 新建客户</button></div>
+          <div class="metric-grid">
+            <article class="metric-card metric-main"><div class="metric-label">今日待跟进 <span class="info-dot" title="演示客户中可跟进、尚未预约的客户">i</span></div><div class="metric-value"><strong id="pendingCount">—</strong><span>位客户</span></div><div class="metric-sub positive" id="priorityHint">正在读取演示记录</div><span class="metric-watermark">↗</span></article>
+            <article class="metric-card"><div class="metric-label">待处理任务</div><div class="metric-value"><strong id="taskCount">0</strong><span>项</span></div><div class="metric-sub" id="taskHint">采用建议后创建跟进待办</div><span class="metric-watermark">◷</span></article>
+            <article class="metric-card"><div class="metric-label">已确认试驾</div><div class="metric-value"><strong id="bookingCount">2</strong><span>场</span></div><div class="metric-sub" id="bookingHint">包含 2 场初始模拟预约</div><span class="metric-watermark">▦</span></article>
+            <article class="metric-card metric-accent"><div class="metric-label">让每次跟进，都有依据</div><div class="agent-card-title">从客户事实<br>到下一步行动 <span>✦</span></div><a href="#quality" class="metric-link" data-view-link="quality">运行 8 个规则评测场景 →</a></article>
+          </div>
+          <div class="workspace-grid"><section class="leads-panel panel"><div class="panel-header"><div><h2>待跟进客户</h2><p id="leadListHint">按 Agent 建议优先级排序</p></div><div class="panel-tools"><div class="search-box"><span>⌕</span><input id="leadSearch" aria-label="搜索客户或车型" type="search" placeholder="搜索客户或车型" /></div><button class="filter-button" id="filterButton">筛选 <span>⌄</span></button></div></div><div class="filter-strip" id="filterStrip"><button class="filter-chip active" data-filter="all">全部 <b id="allCount">12</b></button><button class="filter-chip" data-filter="priority">优先跟进 <b id="priorityCount">3</b></button><button class="filter-chip" data-filter="missing">待补充 <b id="missingCount">2</b></button><button class="filter-chip" data-filter="booked">已约试驾 <b id="bookedCount">2</b></button></div><div class="lead-list" id="leadList"></div></section>
+          <aside class="action-panel panel" id="actionPanel"><div class="empty-action"><div class="empty-illustration"><span>✦</span><span>↗</span><span>◎</span></div><h3>选择一位客户开始</h3><p>Agent 会读取客户记录，准备下一步跟进建议。</p><button class="secondary-button" id="selectPriority">选择优先客户 <span>→</span></button></div></aside></div>
+        </section>
+        <section id="pipelineView" class="view"></section>
+        <section id="knowledgeView" class="view"></section>
+        <section id="qualityView" class="view"></section>
+      </div>
+    </main>
+  </div>
+  <div id="toastRegion" class="toast-region" aria-live="polite"></div>
+  <dialog id="newLeadDialog" class="modal"><form method="dialog" id="newLeadForm"><div class="modal-header"><div><span class="eyebrow">NEW LEAD</span><h2>新建客户</h2></div><button class="icon-button" type="button" id="closeNewLead" aria-label="关闭">×</button></div><p class="modal-intro">先记录最少必要信息，后续可以让 Agent 帮你补全跟进计划。</p><label>客户姓名<input name="name" maxlength="40" required placeholder="例如：张先生" /></label><label>意向车型<select name="model" required><option value="">正在加载官方车型…</option></select></label><label>购车预算<input name="budget" maxlength="80" placeholder="例如：20–25 万（可留空）" /></label><label>客户需求<textarea name="history" maxlength="800" rows="3" placeholder="客户在意什么？记录你听到的原话"></textarea></label><div class="modal-actions"><button type="button" class="secondary-button" id="cancelNewLead">取消</button><button class="primary-button" value="default">添加客户</button></div></form></dialog>
+  <dialog id="detailDialog" class="modal detail-modal" aria-labelledby="detailTitle"></dialog>
+  <script type="module" src="./app.js"></script>
+<a href="../../index.html" target="_top" aria-label="返回小岛首页" style="position:fixed;right:16px;bottom:14px;z-index:90;padding:7px 12px;border:1px solid #cbd7d0;border-radius:20px;background:#ffffffed;color:#254c3f;font:12px system-ui;text-decoration:none;box-shadow:0 2px 12px #0001">↖ 作品集首页</a></body>
+</html>
