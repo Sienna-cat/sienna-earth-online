@@ -1,6 +1,6 @@
 import { createInitialState, SCHEMA_VERSION } from './data.js';
 import { buildPlan } from './domain.js';
-export const STORAGE_KEY = 'sienna-island-drivefollow-v1';
+export const STORAGE_KEY = 'drivefollow-demo-v1';
 const LEGACY_BACKUP_KEY = `${STORAGE_KEY}-backup-before-v2`;
 const legacyModels = { s7: 'nio-es6', e5: 'nio-et5' };
 
