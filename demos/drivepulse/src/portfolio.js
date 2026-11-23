@@ -8,7 +8,7 @@ export function portfolioContent(){return `
     ['人工决策','调整人群与文案，批准后创建待执行任务'],
     ['回收结果','记录响应与拒绝，更新下一步行动']
   ].map(([label,text],i)=>`<div class="case-flow-row"><span>0${i+1}</span><div><small>${label}</small><strong>${text}</strong></div></div>`).join('')}</div></div>
-  <aside class="case-aside"><div class="case-stat"><span>主要用户</span><strong>车主运营</strong><small>以任务为核心组织工作；服务专员负责需要人工判断的后续。</small></div><div class="case-stat"><span>实现方式</span><strong>可控工作流</strong><small>24 条虚构车主记录 · 本地规则与模板 · 浏览器持久化。</small></div><div class="case-stat"><span>成果边界</span><strong>产品原型</strong><small>非蔚来官方项目。没有真实访谈、业务试点或运营收益结论。</small></div></aside></div>
+  <aside class="case-aside"><div class="case-stat"><span>主要用户</span><strong>车主运营</strong><small>以任务为核心组织工作；服务专员负责需要人工判断的后续。</small></div><div class="case-stat"><span>实现方式</span><strong>可控工作流</strong><small>24 条虚构车主记录 · 本地规则与模板 · 浏览器持久化。</small></div><div class="case-stat"><span>项目类型</span><strong>独立产品原型</strong><small>基于虚构车主记录，验证任务流程与交互；非蔚来官方项目。</small></div></aside></div>
 
   <div class="case-section"><div class="section-title"><div><span class="panel-kicker">02 / ROLE FIT</span><h2>这份 JD，如何变成产品证据</h2></div><span class="tiny-label">高级 AI 产品经理 · Agent 应用</span></div>
   <div class="comparison-table"><div class="comparison-head"><span>岗位关注</span><span>项目里的设计</span><span>可以检查的证据</span></div>
@@ -21,7 +21,7 @@ export function portfolioContent(){return `
     ['产品运营与场景渗透','首个任务模板引导；单场景试点后再扩展','下方的验证计划，尚待真实用户执行']
   ].map(r=>`<div class="comparison-row">${r.map(c=>`<span>${c}</span>`).join('')}</div>`).join('')}</div></div>
 
-  <div class="case-sections"><article><span class="panel-kicker">03 / PROBLEM HYPOTHESIS</span><h3>先验证问题是否成立</h3><p>假设：运营人员需要跨多个系统核对资格，且遗漏退订、投诉或最近触达记录会增加返工。下一步访谈 3–5 位运营人员，用最近一次真实任务复现流程。当前没有将假设写成访谈发现。</p></article><article><span class="panel-kicker">04 / INTERACTION CHOICE</span><h3>任务是主要工作单元</h3><p>首版采用“交办表单 + 执行步骤 + 可编辑成果”。自由文本保存目标，结构化条件控制筛选，避免暗示系统理解了任意复杂指令。多轮对话在确有任务澄清需求后再加入。</p></article><article><span class="panel-kicker">05 / SCOPE CHOICE</span><h3>先把执行边界做清楚</h3><p>采用确定性规则和模板，以稳定演示资格校验、审批与状态变更。尚未接入大模型、CRM 或外部触达渠道；未来让模型提取与组织信息，写入校验继续由程序负责。</p></article></div>
+  <div class="case-sections"><article><span class="panel-kicker">03 / PROBLEM HYPOTHESIS</span><h3>先验证问题是否成立</h3><p>假设：运营人员需要跨多个系统核对资格，且遗漏退订、投诉或最近触达记录会增加返工。下一步访谈 3–5 位运营人员，用最近一次真实任务复现流程。访谈将用于验证需求优先级与操作成本。</p></article><article><span class="panel-kicker">04 / INTERACTION CHOICE</span><h3>任务是主要工作单元</h3><p>首版采用“交办表单 + 执行步骤 + 可编辑成果”。自由文本保存目标，结构化条件控制筛选，避免暗示系统理解了任意复杂指令。多轮对话在确有任务澄清需求后再加入。</p></article><article><span class="panel-kicker">05 / SCOPE CHOICE</span><h3>先把执行边界做清楚</h3><p>采用确定性规则和模板，以稳定演示资格校验、审批与状态变更。尚未接入大模型、CRM 或外部触达渠道；未来让模型提取与组织信息，写入校验继续由程序负责。</p></article></div>
 
   <div class="case-section"><span class="panel-kicker">06 / TOOL CONTRACTS</span><h2>每个动作都有输入、结果与边界</h2><div class="tool-contracts">${[
     ['queryOwnerSegment','城市、下降阈值','返回两个 30 天窗口的访问次数、候选 ID；服务需求为必选项。'],
