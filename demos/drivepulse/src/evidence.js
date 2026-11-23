@@ -28,7 +28,7 @@ export function buildPulseEvidence(state) {
       responseRate: percent(responded, feedbackDenominator),
     },
     evidenceBoundary: {
-      status: '模拟数据 · 待真实任务验证',
+      status: '示例数据 · 浏览器任务记录',
       implementation: '规则驱动工作流 · 人工审核 · 本地任务写回',
       excludes: ['真实触达', '用户留存提升', '真实 CRM 接入'],
     },
